@@ -24,6 +24,14 @@ for i in range(h):
     x = m
     y += card_h + m
 
+#カードの表のリスト生成とシャッフル
+card_f = []
+for i in range(1,5):
+    card_f.append('{:02}'.format(i) + 'cardclubs')
+    card_f.append('{:02}'.format(i) + 'cardhearts')
+random.shuffle(card_f)
+
+
 #ウィンドウ内の描画
 def draw():
     screen.clear()
