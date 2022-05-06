@@ -42,7 +42,7 @@ for i in range(2):
 def draw():
     screen.clear()
     if point == len(card)/2:
-        message  =  ['Score','Charenge:' +  str(total),'Rate:' +  str(math.floor(point/total*100)) + '%']
+        message  =  ['Score','Challenge:' +  str(total),'Rate:' +  str(math.floor(point/total*100)) + '%']
         for i in range(3):
             screen.draw.text(message[i],(100,150+i*50), color='orange',fontsize=48)
     else:
