@@ -5,8 +5,6 @@ import time
 import random
 import math
 
-from sqlalchemy import null
-
 WIDTH  = 610  #ウィンドウの横幅
 HEIGHT = 410  #ウィンドウの縦幅
 card_w = 140  #カードの横幅
