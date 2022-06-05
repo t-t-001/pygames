@@ -3,25 +3,35 @@ import random
 
 WIDTH   = 420
 HEIGHT  = 230
-picture = []   #絵柄用のリスト
-picture.append(Actor('slot01',topleft=( 30,30)))     # 
-picture.append(Actor('slot02',topleft=(140,30)))
-picture.append(Actor('slot03',topleft=(250,30)))
 
-switch = Actor('laser',topleft=(375,50))
-ball   = Actor('ball_red_small',topleft=(369,50))
+wheel   = [[],[],[]]
+for i in range(1,8):
+    wheel[0].append(Actor('slot0' + str(i), center=(80,0)))
+    wheel[1].append(Actor('slot0' + str(i), center=(190,0)))
+    wheel[2].append(Actor('slot0' + str(i), center=(300,0)))
+
+for n in range(3):
+    wheel[n][n].y    =   80
+    wheel[n][n+1].y  =  -20
+
+mask    =   Actor('mask',topleft=(0,0))
+switch  =   Actor('laser',topleft=(375,50))
+ball    =   Actor('ball_red_small',topleft=(369,50))
 
 stop_button  =  []
 stop_button.append(Actor('button_yellow',topleft=( 30,150)))
 stop_button.append(Actor('button_yellow',topleft=(140,150)))
 stop_button.append(Actor('button_yellow',topleft=(250,150)))
 
-slot_count = [1,2,3]   # 見えている絵柄
+slot_count = [[0,1],[1,2],[2,3]]   # 見えている絵柄
 drum = [1,1,1]         # 0:回転中のドラム、1:停止しているドラム
-time_count = 0         # 経過時間のカウント用(60秒で1)
 
 def draw():
     screen.clear()    #ウィンドウのクリア
+    for i in range(3):
+
+
+
     switch.draw()     #オブジェクトの描画　棒
     ball.draw()       #オブジェクトの描画　棒の上のボール
     for i in range(3):
